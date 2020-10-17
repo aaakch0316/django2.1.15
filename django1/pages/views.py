@@ -12,3 +12,13 @@ def lotto(request):
         'pick' : pick
     }
     return render(request, 'lotto.html', context)
+    
+def computer(request):
+    import random
+    languages = ['HTML', 'CSS', 'bootstrap', 'django', 'python']
+    language = random.choice(languages)
+    context = {
+        'languages' : languages,
+        'language' : language
+    }
+    return render(request, 'computer.html', context)
