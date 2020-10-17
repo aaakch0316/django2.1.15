@@ -22,3 +22,9 @@ def computer(request):
         'language' : language
     }
     return render(request, 'computer.html', context)
+
+def hi(request, name):
+    context = {
+        'name' : name
+    }
+    return render(request, 'hi.html', context)

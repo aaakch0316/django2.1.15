@@ -22,4 +22,5 @@ urlpatterns = [
     path('index/', views.index),
     path('lotto/', views.lotto),
     path('computer/', views.computer),
+    path('hi/<str:name>/', views.hi),
 ]
