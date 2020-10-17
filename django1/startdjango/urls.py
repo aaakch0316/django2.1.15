@@ -23,4 +23,5 @@ urlpatterns = [
     path('lotto/', views.lotto),
     path('computer/', views.computer),
     path('hi/<str:name>/', views.hi),
+    path('add/<int:a>/<int:b>', views.add),
 ]
