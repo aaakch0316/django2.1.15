@@ -24,4 +24,5 @@ urlpatterns = [
     path('computer/', views.computer),
     path('hi/<str:name>/', views.hi),
     path('add/<int:a>/<int:b>', views.add),
+    path('posts/<int:id>/', views.posts),
 ]

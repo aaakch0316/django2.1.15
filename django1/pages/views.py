@@ -35,3 +35,17 @@ def add(request, a, b):
         'result' : result
     }
     return render(request, 'add.html', context)
+
+def posts(request, id):
+    content = 'Life is short, you need python!'
+    replies = ['유익!!', '별로다!!!', '감사합니다!!']
+    no_replies = []
+    user = 'hanpy'
+    context = {
+        'id' : id,
+        'content' : content,
+        'replies' : replies,
+        'no_replies' : no_replies,
+        'user' : user,
+    }
+    return render(request, 'posts.html', context)

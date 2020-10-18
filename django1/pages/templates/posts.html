@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {# 주석은 이렇게 적어 주세요 #}
+    <h1>{{ id }}번째 글입니다.</h1>
+    <p>{{ content }}</p>
+    <p>{{ content|length }}</p>
+    <p>{{ content|truncatechars:10 }}</p>
+    
+    <h2>댓글</h2>
+    <ul>
+        {% for reply in replies %}
+            <li>댓글 {{ forloop.counter }} : {{ reply }} </li>
+            {% empty %}
+            <p>댓글을 작성해 주세요</p>
+        {% endfor %}
+    </ul>
+    {% if user == 'hanpy' %}
+        <p>수정, 삭제</p>
+    {% else %}
+        <p>관리자 권한이 없습니다.</p>
+    {% endif %}
+</body>
+</html>
