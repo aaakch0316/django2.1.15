@@ -8,3 +8,4 @@ https://han-py.tistory.com/32
 위의 사이트에 들어가서 순차적으로 진행해보자.
 
 ##### django2
+ django1에서 배운 내용으로 django2 프로젝트를 생성하고 articles 앱을 생성했다. settings.py까지 수정하고 url 분리를 시작한다.
