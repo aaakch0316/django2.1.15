@@ -9,3 +9,6 @@ https://han-py.tistory.com/32
 
 ##### django2
  django1에서 배운 내용으로 django2 프로젝트를 생성하고 articles 앱을 생성했다. settings.py까지 수정하고 url 분리를 시작한다.
+ 그리고 base.html을 활용하는 탬플릿 확장을 적용해 보자.
+https://han-py.tistory.com/83
+ https://han-py.tistory.com/48
