@@ -12,3 +12,7 @@ https://han-py.tistory.com/32
  그리고 base.html을 활용하는 탬플릿 확장을 적용해 보자.
 https://han-py.tistory.com/83
  https://han-py.tistory.com/48
+
+
+##### django3
+장고의 꽃 CRUD에 대한 내용이다.
