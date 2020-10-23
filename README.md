@@ -16,3 +16,6 @@ https://han-py.tistory.com/83
 
 ##### django3
 장고의 꽃 CRUD에 대한 내용이다.
+
+https://han-py.tistory.com/51
+위의 사이트에 들어가서 C R U D 전부 학습할 수 있다.
