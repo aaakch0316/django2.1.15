@@ -2,5 +2,10 @@
 
 {% block body %}
 <h2>게시판</h2>
-<a href="#">New</a>
+<a href="/articles/new/">New</a>
+{% for article in articles %}
+    <h2>제목 : {{ article.title }}</h2>
+    <h2>내용 : {{ article.content }}</h2>
+    <a href="#">detail</a>
+{% endfor %}
 {% endblock %}
