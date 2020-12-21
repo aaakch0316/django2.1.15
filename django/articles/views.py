@@ -13,5 +13,8 @@ def new(request):
     return render(request, 'articles/new.html')
 
 def create(request):
-    if request.method == 'POST':
-        form = ArticleForm(request.POST)
+    title = request.GET.get('title')
+    content = request.GET.get('content')
+    article = Article(title=title, content=content)
+    article.save()
+    return redirect('/articles/')
