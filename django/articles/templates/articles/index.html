@@ -2,10 +2,29 @@
 
 {% block body %}
 <h1>게시판</h1>
-<a href="/articles/new/">새로만들기</a>
+<!-- <a href="/articles/create/">새로만들기</a>
 {% for article in articles %}
-    <h2>제목 : {{ article.title }}</h2>
-    <h2>내용 : {{ article.content }}</h2>
-    <a href="/articles/{{article.pk}}/">Detail</a>
-{% endfor %}
-{% endblock %}
+    {{ article.title }}
+    <a href="/articles/{{article.pk}}/">{{ article.content }}</a>
+{% endfor %} -->
+<a class="btn btn-primary" href="/articles/create/">글쓰기</a>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">title</th>
+        <th scope="col">content</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for article in articles %}
+      <tr>
+        <td>{{article.id}}</td>
+        <td>{{article.title}}</td>
+        <td><a href="/articles/{{article.pk}}/">{{ article.content }}</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  {% endblock %}
