@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h2>게시물 작성하기</h2>
+<!-- <form action="/articles/create/">
+  input: <input type="text" name="title">
+  <br>
+  content: <textarea name="content" cols="30" rows="15"></textarea>
+  <br>
+  <input type="submit" value="Send">
+</form> -->
+<!-- 
+<form action="/articles/create/" method="POST">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="제출">
+</form> -->
+
+<form action="/articles/create/" method="POST">
+  {% csrf_token %}
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">제목</label>
+    <input type="title" class="form-control" id="exampleFormControlInput1" placeholder="제목을 적어주세요" name="title">
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">내용</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="15" name="content"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+{% endblock %}
