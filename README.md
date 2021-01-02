@@ -19,3 +19,7 @@ https://han-py.tistory.com/83
 
 https://han-py.tistory.com/51
 위의 사이트에 들어가서 C R U D 전부 학습할 수 있다.
+
+
+##### polls
+> django의 기초개념을 활용하여 설문조사 서비스를 만들어 보자.
