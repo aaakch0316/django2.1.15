@@ -1,0 +1,5 @@
+{% extends 'base.html' %}
+{% block body %}
+    <h1>{{ article.pk}} : {{ article.title }}</h1>
+    <a href="{% url 'articles:index' %}">back</a>
+{% endblock %}
