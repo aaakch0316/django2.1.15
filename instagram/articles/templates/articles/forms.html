@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block body %}
+<!-- action을 비워 놓았는데, 이렇게 하면 form 데이터가 현재 URL페이지로 다시 POST 된다 -->
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="send">
+    </form>
+{% endblock %}
