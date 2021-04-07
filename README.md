@@ -22,4 +22,16 @@ https://han-py.tistory.com/51
 
 
 ##### polls
-> django의 기초개념을 활용하여 설문조사 서비스를 만들어 보자.
+> django의 기초개념을 활용하여 설문조사 서비스를 만들어 보자. (장고 공식사이트 튜토리얼 내용) 
+
+
+##### bookmark
+
+
+##### instagram
+> 인스타그램의 기능 위주로 게시글, 로그인 등을 구현해 본다.
+기본 초기설정 -> models.py -> migrate -> admin.py -> forms.py -> urls.py(include)
+-> index.htlm -> base.html -> 첫페이지를 첫 url.(from articlels import views) -> create(url->views) 
+-> forms.html -> detail.html
+
+
