@@ -65,12 +65,33 @@ class UserLoginSerializer(serializers.Serializer):
             'token': jwt_token
         }
 
+
+class BaseSerializer(serializers.Serializer):
+    email = serializers.EmailField(required=True)
+    phone_number = serializers.CharField()
+    address = serializers.CharField()
+    # items_of_interest = serializers.CharField()
+    # job = serializers.CharField()
+
+
 class UserSerializer(serializers.BaseSerializer):
     def to_representation(self, instance):
         return {
             'email': instance.email,
+            'phone_number': instance.phone_number,
+            'address': instance.address
             # 'player_name': instance.player_name
         }
     # class Meta:
     #     model = MyUser
     #     fields = ['id', 'email']
+
+
+class MetaUserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = MyUser
+        fields = (
+            "email",
+            "phone_number",
+            "address"
+        )

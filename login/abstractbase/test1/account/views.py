@@ -84,8 +84,10 @@ from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
 from django.http import JsonResponse
 from django.http import HttpResponse
+from rest_framework.decorators import api_view
 
-# # @api_view(['GET'])
+
+# @api_view(['GET'])
 # def user_list(request):
 #     queryset = MyUser.objects.all()
 #     print(queryset)
@@ -102,13 +104,35 @@ from django.http import HttpResponse
 #     return HttpResponse()
 
 
-'''
-쿼리셋이나 특정 타입을 JSON으로 곧장 변환시킬 수 없습니다.
-다음과 같이 django.core의 serializers를 사용해서 쿼리셋을 json화 해준 후 HttpResponse에 담아서 리턴해야 json을 받을 수 있다.
-물론 이 방법은 잘 작동하지만 데이터에 대한 validation을 하지 않는다는 단점이 있다.
-'''
+# '''
+# 쿼리셋이나 특정 타입을 JSON으로 곧장 변환시킬 수 없습니다.
+# 다음과 같이 django.core의 serializers를 사용해서 쿼리셋을 json화 해준 후 HttpResponse에 담아서 리턴해야 json을 받을 수 있다.
+# 물론 이 방법은 잘 작동하지만 데이터에 대한 validation을 하지 않는다는 단점이 있다.
+# '''
 from django.core import serializers
+# def user_list(request):
+#     queryset = MyUser.objects.all()
+#     data = serializers.serialize("json", queryset) 
+#     return HttpResponse(content=data)
+
+
+from rest_framework.response import Response
+from .serializers import BaseSerializer, UserSerializer, MetaUserSerializer
+
+from rest_framework.decorators import authentication_classes, permission_classes
+@api_view(['GET'])
+@authentication_classes([])
+@permission_classes([])
 def user_list(request):
     queryset = MyUser.objects.all()
-    data = serializers.serialize("json", queryset) 
-    return HttpResponse(content=data)
+    serialized_data = MetaUserSerializer(queryset, many=True) 
+    return Response(data=serialized_data.data)
+
+
+# @api_view(['GET'])
+# @authentication_classes([])
+# @permission_classes([])
+# def user_list(request):
+#     queryset = MyUser.objects.all()
+#     serialized_data = MetaUserSerializer(queryset, many=True) 
+#     return JsonResponse(serialized_data.data, safe=False)
